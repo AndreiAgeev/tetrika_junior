@@ -24,6 +24,12 @@ class Task1Constants:
 
 
 class Task2Constants:
+    """
+    Класс констант для тестов task2.
+
+    Переменные:
+        - SETTINGS: словарь настроек для запуска паука в тестах.
+    """
     SETTINGS = {
         'USER_AGENT': (
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
