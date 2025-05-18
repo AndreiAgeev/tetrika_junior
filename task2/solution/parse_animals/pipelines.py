@@ -3,7 +3,7 @@ from collections import defaultdict
 
 from itemadapter import ItemAdapter
 
-from .constants import FILEPATH, RESULT_DIR
+from .constants import RESULT_DIR
 
 
 class ParseAnimalsPipeline:
@@ -21,7 +21,9 @@ class ParseAnimalsPipeline:
 
     def close_spider(self, spider):
         self.animal_dict['Total'] = sum(self.animal_dict.values())
-        with open(FILEPATH, 'w', encoding='utf-8', newline='') as file:
+        filename = 'beasts.csv'
+        filepath = RESULT_DIR / filename
+        with open(filepath, 'w', encoding='utf-8', newline='') as file:
             writer = csv.writer(file, dialect='unix', quoting=csv.QUOTE_NONE)
             writer.writerows(
                 (('Буква', 'Количество'), *self.animal_dict.items())

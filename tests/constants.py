@@ -23,6 +23,20 @@ class Task1Constants:
     )
 
 
+class Task2Constants:
+    SETTINGS = {
+        'USER_AGENT': (
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+            '(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
+        ),
+        'ROBOTSTXT_OBEY': False,
+        'DOWNLOAD_DELAY': 1,
+        'ITEM_PIPELINES': {'parse_animals.pipelines.ParseAnimalsPipeline': 300},
+        'LOG_ENABLED': False,
+        'LOG_LEVEL': 'ERROR'
+    }
+
+
 class Task3Constants:
     """
     Класс констант для тестов task3.
