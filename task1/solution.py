@@ -12,9 +12,6 @@ def strict(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         annotations = func.__annotations__
-        print(annotations)
-        print(len(annotations))
-        print(len(args) + len(kwargs) + 1)
         if not annotations or len(annotations) != (len(args) + len(kwargs) + 1):
             raise TypeError(error_not_annotated)
 
